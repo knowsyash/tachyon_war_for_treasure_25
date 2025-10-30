@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Team {
+  team_name     String         @id
+  team_password String
+  locked        Boolean        @default(false)
+  team_progress TeamProgress[]
+  users         User[]
+}
+
+model User {
+  EnrollNo  String @id
+  name      String
+  team_name String
+  team      Team   @relation(fields: [team_name], references: [team_name])
+}
+
+model Question {
+  question_id          String         @id
+  question_text        String
+  question_description String
+  answer               String
+  team_progress        TeamProgress[]
+}
+
+model TeamProgress {
+  progress_id  String    @id
+  team_name    String
+  question_id  String
+  is_completed Boolean
+  solved_at    DateTime?
+  question     Question  @relation(fields: [question_id], references: [question_id])
+  team         Team      @relation(fields: [team_name], references: [team_name])
+
+  @@unique([team_name, question_id])
+}
+
+model Hint {
+  id        String   @id @default(uuid())
+  hintText  String
+  createdAt DateTime @default(now())
+}
+
+model playing_with_neon {
+  id    Int    @id @default(autoincrement())
+  name  String
+  value Float? @db.Real
+}
