@@ -16,6 +16,11 @@ const wss = new WebSocketServer({ port: 8080 });
 app.use(express.json());
 app.use(cors());
 
+// Health check endpoint
+app.get('/health', (req: Request, res: Response) => {
+    res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 app.post('/lock-all-teams', async (req: Request, res: Response) => {
     try {
         await prisma.team.updateMany({
