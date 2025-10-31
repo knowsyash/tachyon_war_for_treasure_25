@@ -30,7 +30,7 @@ export default function Home() {
             <h1 className="anton-heading"> NOT <span className="stroke">FOUND</span></h1>
             <Flex gap={20}>
               <Button className="anton-button" style={{ backgroundColor: "#9900ff", border: "none" }} onClick={() => router.push('/register')}>Register</Button>
-              {/* <Button className="anton-button" style={{ backgroundColor: "#0e1723", border: "1px dotted white" }} onClick={() => router.push('/quiz')}>Join Hunt</Button> */}
+              <Button className="anton-button" style={{ backgroundColor: "#0e1723", border: "1px dotted white" }} onClick={() => router.push('/quiz')}>Join Hunt</Button>
             </Flex>
             <h3 className="anton-text">Mozilla Phoniex Club</h3>
             <h3 className="anton-text">7 November</h3>
