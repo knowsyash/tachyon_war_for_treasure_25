@@ -7,15 +7,28 @@
 }
 
 .hero-background {
-    background-image: url('../assets/0fa650ebbe47aa5e4044108eb521dac4.gif');
-    background-size: cover;
-    background-position: center;
     background-color: black;
-    height: 200vh;
-    width: auto;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+.hero-headline-bg {
+    background-image: url('../assets/0fa650ebbe47aa5e4044108eb521dac4.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    padding: 2vw 4vw;
 }
 
 .hero-image{
@@ -48,21 +61,24 @@
 
 .anton-heading {
     font-family: 'Anton', sans-serif;
-    font-size: 168px;
+    font-size: clamp(2.2rem, 8vw, 7rem);
     font-weight: 900;
-    line-height: 168px;
-    text-align: start;
-    color: white;
+    line-height: 1.05;
+    text-align: left;
+    color: #fff;
+    text-shadow: 2px 2px 8px #000, 0 2px 4px #222;
+    word-break: break-word;
+    margin: 0;
 }
 
 .anton-text {
     padding: 0px;
-    font-size: 50px;
+    font-size: clamp(1rem, 3vw, 2.5rem);
     font-weight: 900;
-    text-align: start;
-    color: white;
+    text-align: left;
+    color: #fff;
     margin: 0;
-    padding: 0px;
+    text-shadow: 1px 1px 4px #000;
 }
 .anton-button{
     margin-top: 20px;
@@ -781,17 +797,20 @@
     }
 
     .anton-heading {
-        font-size: 70px;
-        font-weight: 900;
-        line-height: 128px;
+           font-size: 2.2rem;
+           font-weight: 900;
+           line-height: 1.1;
+           text-align: left;
+           word-break: break-word;
+           text-shadow: 2px 2px 8px #000, 0 2px 4px #222;
     }
 
     .anton-text {
-        padding: 0px;
-        font-size: 18px;
-        font-weight: 900;
-        margin: 0;
-        padding: 0px;
+           font-size: 1rem;
+           font-weight: 900;
+           margin: 0;
+           text-align: left;
+           text-shadow: 1px 1px 4px #000;
     }
     
     .anton-text+.anton-text {
@@ -799,11 +818,11 @@
     }
 
     .anton-button{
-        margin-top: -20px;
-        width: 80px;
-        height: 30px;
-        font-size: 12.2px;
-        line-height: 28.8px;
+           width: 100px;
+           height: 36px;
+           font-size: 0.9rem;
+           border-radius: 4px;
+           margin-top: 10px;
     }
 
     .about-section{

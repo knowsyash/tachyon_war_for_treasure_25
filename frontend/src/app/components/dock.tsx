@@ -28,8 +28,8 @@ export const FloatingDock = ({
 }) => {
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockDesktop items={items} className={cn(desktopClassName, 'floating-dock-navbar')} />
+      <FloatingDockMobile items={items} className={cn(mobileClassName, 'floating-dock-navbar-mobile')} />
     </>
   );
 };

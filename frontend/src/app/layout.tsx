@@ -8,7 +8,8 @@ import {
   IconSkull,
   IconExchange,
   IconHome,
-  IconRollercoaster
+  IconRollercoaster,
+  IconUsers
 } from "@tabler/icons-react";
 // import { VerticalAlignBottomOutlined } from '@ant-design/icons';
 import Image from "next/image";
@@ -49,21 +50,21 @@ export default function RootLayout({
       icon: (
         <IconRollercoaster className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      href: "/register",
     },
     {
       title: "Quiz",
       icon: (
         <IconSkull className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      href: "/quiz",
     },
     {
-      title: "Components",
+      title: "Developers",
       icon: (
-        <Avatar src={avatar.src}></Avatar>
+        <IconUsers className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      href: "/developers",
     },
   ];
 
@@ -85,8 +86,8 @@ export default function RootLayout({
             <footer className="w-full flex justify-center items-end">
 
               <FloatingDock
-                desktopClassName="fixed bottom-4 left-1/2 transform -translate-x-1/2"
-                mobileClassName="fixed bottom-4 right-4"
+                desktopClassName="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg"
+                mobileClassName="fixed bottom-4 right-4 z-50 bg-white/90 backdrop-blur-sm rounded-full shadow-lg"
                 items={links}
               />
 
